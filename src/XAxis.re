@@ -8,9 +8,10 @@ external make:
     ~allowDataOverflow: bool=?,
     ~allowDecimals: bool=?,
     ~allowDuplicatedCategory: bool=?,
+    ~angle: float=?,
     ~axisLine: 'axisLine=?,
     ~className: string=?,
-    ~dataKey: string=?,
+    ~dataKey: 'dataKey=?,
     ~domain: array('domain)=?,
     ~height: int=?,
     ~hide: bool=?,
@@ -31,6 +32,7 @@ external make:
     ~padding: paddingHorizontal=?,
     ~reversed: bool=?,
     ~scale: scale=?,
+    ~stroke: string=?,
     ~tick: 'tick=?,
     ~tickCount: int=?,
     ~tickFormatter: 'tickFormatter=?,
@@ -45,4 +47,5 @@ external make:
   React.element =
   "XAxis";
 
-let makeProps = (~interval=?) => makeProps(~interval=?interval->AxisInterval.encodeOpt);
+let makeProps = (~interval=?) =>
+  makeProps(~interval=?interval->AxisInterval.encodeOpt);

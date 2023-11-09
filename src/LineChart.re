@@ -5,7 +5,7 @@ open Utils;
 external make:
   (
     ~className: string=?,
-    ~data: array('dataItem),
+    ~data: array('dataItem)=?,
     ~height: int=?,
     ~layout: layout=?,
     ~margin: margin=?,

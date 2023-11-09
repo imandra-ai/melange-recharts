@@ -19,6 +19,7 @@ external make:
     ~className: string=?,
     ~connectNulls: bool=?,
     ~hide: bool=?,
+    ~data: 'data=?,
     ~dataKey: 'dataKey,
     ~dot: 'dot=?,
     ~id: string=?,
