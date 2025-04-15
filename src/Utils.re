@@ -13,7 +13,18 @@ type lineType = [
   | `stepAfter
 ];
 
-type legendType = [ | `line | `square | `rect | `circle | `cross | `diamond | `square | `star | `triangle | `wye];
+type legendType = [
+  | `line
+  | `square
+  | `rect
+  | `circle
+  | `cross
+  | `diamond
+  | `square
+  | `star
+  | `triangle
+  | `wye
+];
 
 type scale = [
   | `auto
@@ -33,11 +44,23 @@ type scale = [
   | `threshold
 ];
 
-type axisType = [ | `number | `category];
+type axisType = [
+  | `number
+  | `category
+];
 
-type layout = [ | `horizontal | `vertical];
+type layout = [
+  | `horizontal
+  | `vertical
+];
 
-type stackOffset = [ | `expand | `none | `wiggle | `silhouette | `sign];
+type stackOffset = [
+  | `expand
+  | `none
+  | `wiggle
+  | `silhouette
+  | `sign
+];
 
 type margin = {
   .
@@ -87,12 +110,14 @@ module AxisInterval = {
     | PreserveStart
     | PreserveEnd
     | PreserveStartEnd
+    | EquidistantPreserveStart
     | Num(int);
   let encode: arg => t =
     fun
     | PreserveStart => Obj.magic("preserveStart")
     | PreserveEnd => Obj.magic("preserveEnd")
     | PreserveStartEnd => Obj.magic("preserveStartEnd")
+    | EquidistantPreserveStart => Obj.magic("equidistantPreserveStart")
     | Num(num) => Obj.magic(num);
   let encodeOpt = Option.map(encode);
 };
